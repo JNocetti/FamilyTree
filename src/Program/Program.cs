@@ -26,21 +26,25 @@ namespace Program
             n3.AddChildren(n7);
             */
             Person abuelo_madre = new Person ("Juan Carlos", 70);
-            Node node1 = new Node (abuelo_madre);
-            Person abuela_madre = new Person ("Blanca", 56);
-            Node node2 = new Node (abuela_madre);
-            Person abuela_padre = new Person ("Maria", 75);
-            Node node3 = new Node(abuela_padre);
-            Person madre = new Person ("Solana", 47);
-            Node node4 = new Node(madre);
-            Person padre = new Person ("Gustavo", 53);
-            Node node5 = new Node(padre);
+            Node node_abuelo_madre = new Node (abuelo_madre);
             Person tío_madre = new Person ("Weston", 42);
-            Node node6 = new Node(tío_madre);
+            Person madre = new Person ("Solana", 47);
+            node_abuelo_madre.AddChildren(tío_madre);
+            node_abuelo_madre.AddChildren(madre);
+            
+            Person abuela_madre = new Person ("Blanca", 56);
+            Node node_abuela_madre = new Node (abuela_madre);
+            node_abuela_madre.AddChildren(tío_madre);
+            node_abuela_madre.AddChildren(madre);
+            
+            Person abuela_padre = new Person ("Maria", 75);
+            Node node_abuela_padre = new Node(abuela_padre);
+            Person padre = new Person ("Gustavo", 53);
             Person tío_padre = new Person ("Oscar", 56);
-            Node node7 = new Node(tío_padre);
             Person tía_padre = new Person ("Marianela", 56);
-            Node node8 = new Node(tía_padre);
+            node_abuela_padre.AddChildren(padre);
+            node_abuela_padre.AddChildren(tío_padre);
+            node_abuela_padre.AddChildren(tía_padre);
 
         }
     }
