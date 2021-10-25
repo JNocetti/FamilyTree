@@ -6,30 +6,25 @@ namespace Library
 {
     public class Node
     {
-        private int number;
 
-        private List<Node> children = new List<Node>();
 
-        public int Number {
-            get
-            {
-                return this.number;
-            }
-        }
+        public Person Person;
 
-        public ReadOnlyCollection<Node> Children { 
+        private List<Person> children = new List<Person>();
+
+        public ReadOnlyCollection<Person> Children { 
             get
             {
                 return this.children.AsReadOnly();
             }
         }
 
-        public Node(int number)
+        public Node(Person person)
         {
-            this.number = number;
+            this.Person = person;
         }
 
-        public void AddChildren(Node n)
+        public void AddChildren(Person n)
         {
             this.children.Add(n);
         }
