@@ -10,9 +10,9 @@ namespace Library
 
         public Person Person;
 
-        private List<Node> children = new List<Node>();
+        private List<Person> children = new List<Person>();
 
-        public ReadOnlyCollection<Node> Children { 
+        public ReadOnlyCollection<Person> Children { 
             get
             {
                 return this.children.AsReadOnly();
@@ -21,24 +21,30 @@ namespace Library
 
         public override void Visit (Person person)
         {
-            int suma;
-            foreach (Node familiar in children )
+            int suma=0;
+            foreach (Person familiar in children )
             {
-                suma =+ familiar.Person.Age;
+                suma =+ familiar.Age;
             }
         }
 
         public override void Old(Person person)
         {
+            /*
             foreach (Node familiar in children )
             {
                 int age=familiar.Person.Age;
                 int max = age.Max();
             }
-            
+            */
+            for (int i = 0; i < length; i++)
+            {
+                
+            }
         }
         public override void LargestName(Person person)
         {
+            
 
         }
 
