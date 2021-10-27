@@ -21,26 +21,26 @@ namespace Library
 
         public override void Visit (Person person)
         {
-            int suma=0;
-            foreach (Person familiar in children )
+            int total=0;
+            foreach ( Person persona in person.family)
             {
-                suma =+ familiar.Age;
+                total+=persona.Age;
             }
         }
 
         public override void Old(Person person)
         {
-            /*
-            foreach (Node familiar in children )
+            int max=0;
+            foreach (Person familiar in children )
             {
-                int age=familiar.Person.Age;
-                int max = age.Max();
+                int age=familiar.Age;
+                if (age>max)
+                {
+                    max=age;
+                }
             }
-            */
-            for (int i = 0; i < length; i++)
-            {
-                
-            }
+            
+
         }
         public override void LargestName(Person person)
         {
