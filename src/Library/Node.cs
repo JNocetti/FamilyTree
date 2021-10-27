@@ -19,19 +19,20 @@ namespace Library
             }
         }
 
-        public override void Visit (Person person)
+        public override int Visit (Person person)
         {
             int total=0;
             foreach ( Person persona in person.family)
             {
                 total+=persona.Age;
             }
+            return total;
         }
 
-        public override void Old(Person person)
+        public override int Old(Person person)
         {
             int max=0;
-            foreach (Person familiar in children )
+            foreach (Person familiar in person.family )
             {
                 int age=familiar.Age;
                 if (age>max)
@@ -39,12 +40,21 @@ namespace Library
                     max=age;
                 }
             }
-            
+            return max;
 
         }
         public override void LargestName(Person person)
         {
-            
+            int max=0;
+            foreach (Person familiar in person.family )
+            {
+                string name=familiar.Name;
+                int caracteresname=name.Length();
+                if (caracteresname>max)
+                {
+                    max=caracteresname;
+                }
+            }
 
         }
 
